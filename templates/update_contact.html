@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Update Contact {% endblock %}
+
+{% block content %}
+<!-- Edit contact section -->
+<section id="edit-contact" class="edit-contact section">
+    <!-- Section title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Edit Contact Details</h2>
+    </div> <!-- End section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <form method="POST" role="form" class="book_table">
+            {% csrf_token %}
+            
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" value="{{ contact.name }}" required="">
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" value="{{ contact.email }}" required="">
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" value="{{ contact.subject }}" required="">
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <input type="text" name="quantity" class="form-control" id="quantity" placeholder="Quantity" value="{{ contact.quantity }}" required="">
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <textarea name="location" class="form-control" id="location" placeholder="Location" required>{{ contact.location }}</textarea>
+                </div>
+
+                <div class="form-group mt-3">
+                    <button type="submit" class="btn btn-success">Update Details</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

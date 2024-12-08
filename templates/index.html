@@ -1,0 +1,418 @@
+{% extends 'base.html' %}
+{% load static %}
+ {% block title %} Home {% endblock %}
+
+ {% block content %}
+  
+ {% if messages %}
+ {% for message in messages %}
+ <div class="alert alert-warning alert-dismissible fade show" role="alert">
+ {{ message }}
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+     </button>
+ </div>
+ {% endfor %}
+ {% endif %}
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio section" style="padding: 60px 0; background-color: #f9f9f9;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+      <div class="row align-items-center">
+        <div class="col-lg-7 portfolio-info" style="margin-top: 20px;">
+          <h3 style="font-size: 2.5rem; color: #333; font-weight: bold; margin-bottom: 20px;">Retail & Harvest Revolution</h3>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #666;">Connect with local farmers and food outlets to streamline supply and demand. Farmers, register your harvest details today, and food outlets, explore fresh, high-quality produce ready to be ordered. Let's build a sustainable food network together!
+          </p>
+        </div>
+      </div>
+
+      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
+
+        <!-- Portfolio Item 1 -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app" style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;">
+          <div class="portfolio-content h-100" style="position: relative; padding: 20px; background: white;">
+            <img src="{% static 'assets\img\inventory\Groceries.jpg' %}" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: opacity 0.3s ease;">
+            <div class="portfolio-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6); color: white; padding: 20px; opacity: 0; transition: opacity 0.3s ease;">
+              <h4 style="font-size: 1.5rem; margin-bottom: 10px;">Groceries</h4>
+              <p style="font-size: 1rem; margin-bottom: 20px;">fresh</p>
+              <div>
+                <a href="{% static 'assets\img\inventory\Groceries.jpg' %}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link" style="margin-right: 10px; color: #fff; font-size: 1.5rem; transition: color 0.3s ease;"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'eagle_app:portfolio_details' %}" title="More Details" class="details-link" style="color: #fff; font-size: 1.5rem; transition: color 0.3s ease;"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 2 -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product" style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;">
+          <div class="portfolio-content h-100" style="position: relative; padding: 20px; background: white;">
+            <img src="{% static 'assets\img\inventory\Eggs.jpg' %}" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: opacity 0.3s ease;">
+            <div class="portfolio-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6); color: white; padding: 20px; opacity: 0; transition: opacity 0.3s ease;">
+              <h4 style="font-size: 1.5rem; margin-bottom: 10px;">Inventory</h4>
+              <p style="font-size: 1rem; margin-bottom: 20px;">Mayai</p>
+              <div>
+                <a href="{% static 'assets\img\inventory\Strawberries.jpg' %}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link" style="margin-right: 10px; color: #fff; font-size: 1.5rem; transition: color 0.3s ease;"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'eagle_app:portfolio_details' %}" title="More Details" class="details-link" style="color: #fff; font-size: 1.5rem; transition: color 0.3s ease;"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 2 -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product" style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;">
+          <div class="portfolio-content h-100" style="position: relative; padding: 20px; background: white;">
+            <img src="{% static 'assets\img\inventory\Strawberries.jpg' %}" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: opacity 0.3s ease;">
+            <div class="portfolio-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6); color: white; padding: 20px; opacity: 0; transition: opacity 0.3s ease;">
+              <h4 style="font-size: 1.5rem; margin-bottom: 10px;">Strawberries</h4>
+              <p style="font-size: 1rem; margin-bottom: 20px;">Sweet</p>
+              <div>
+                <a href="{% static 'assets\img\inventory\Strawberries.jpg' %}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link" style="margin-right: 10px; color: #fff; font-size: 1.5rem; transition: color 0.3s ease;"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'eagle_app:portfolio_details' %}" title="More Details" class="details-link" style="color: #fff; font-size: 1.5rem; transition: color 0.3s ease;"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product" style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;">
+                  <div class="portfolio-content h-100" style="position: relative; padding: 20px; background: white;">
+                    <img src="{% static 'assets\img\inventory\apples.jpg' %}" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: opacity 0.3s ease;">
+                    <div class="portfolio-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6); color: white; padding: 20px; opacity: 0; transition: opacity 0.3s ease;">
+                      <h4 style="font-size: 1.5rem; margin-bottom: 10px;">Strawberries</h4>
+                      <p style="font-size: 1rem; margin-bottom: 20px;">Sweet</p>
+                      <div>
+                        <a href="{% static 'assets\img\inventory\Strawberries.jpg' %}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link" style="margin-right: 10px; color: #fff; font-size: 1.5rem; transition: color 0.3s ease;"><i class="bi bi-zoom-in"></i></a>
+                        <a href="{% url 'eagle_app:portfolio_details' %}" title="More Details" class="details-link" style="color: #fff; font-size: 1.5rem; transition: color 0.3s ease;"><i class="bi bi-link-45deg"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <!-- Portfolio Item 2 -->
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product" style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;">
+                  <div class="portfolio-content h-100" style="position: relative; padding: 20px; background: white;">
+                    <img src="{% static 'assets\img\inventory\Bananas.jpg' %}" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: opacity 0.3s ease;">
+                    <div class="portfolio-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6); color: white; padding: 20px; opacity: 0; transition: opacity 0.3s ease;">
+                      <h4 style="font-size: 1.5rem; margin-bottom: 10px;">Strawberries</h4>
+                      <p style="font-size: 1rem; margin-bottom: 20px;">Sweet</p>
+                      <div>
+                        <a href="{% static 'assets\img\inventory\Strawberries.jpg' %}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link" style="margin-right: 10px; color: #fff; font-size: 1.5rem; transition: color 0.3s ease;"><i class="bi bi-zoom-in"></i></a>
+                        <a href="{% url 'eagle_app:portfolio_details' %}" title="More Details" class="details-link" style="color: #fff; font-size: 1.5rem; transition: color 0.3s ease;"><i class="bi bi-link-45deg"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                                <!-- Portfolio Item 2 -->
+                                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product" style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;">
+                                  <div class="portfolio-content h-100" style="position: relative; padding: 20px; background: white;">
+                                    <img src="{% static 'assets\img\inventory\Avocadoes.jpg' %}" class="img-fluid" alt="" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: opacity 0.3s ease;">
+                                    <div class="portfolio-info" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6); color: white; padding: 20px; opacity: 0; transition: opacity 0.3s ease;">
+                                      <h4 style="font-size: 1.5rem; margin-bottom: 10px;">Strawberries</h4>
+                                      <p style="font-size: 1rem; margin-bottom: 20px;">Sweet</p>
+                                      <div>
+                                        <a href="{% static 'assets\img\inventory\Strawberries.jpg' %}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link" style="margin-right: 10px; color: #fff; font-size: 1.5rem; transition: color 0.3s ease;"><i class="bi bi-zoom-in"></i></a>
+                                        <a href="{% url 'eagle_app:portfolio_details' %}" title="More Details" class="details-link" style="color: #fff; font-size: 1.5rem; transition: color 0.3s ease;"><i class="bi bi-link-45deg"></i></a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+        <!-- More Portfolio Items can follow the same structure -->
+
+      </div><!-- End Portfolio Container -->
+      
+    </div><!-- End Isotope Layout -->
+
+  </div><!-- End Container -->
+
+</section><!-- End Portfolio Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Clients</h2>
+        <p>Promotion of Eco-friendly Products: Highlighting products that are environmentally sustainable to appeal to eco-conscious consumers.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="{% static 'assets\img\clients\Kempinski.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets\img\clients\naivas.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets\img\clients\Serena.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets\img\clients\Sarova.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets\img\clients\Diani.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets\img\clients\Hilton.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets\img\clients\Artcafe.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets\img\clients\watamu.jpg' %}" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Proposals that are community-centered and offer practical, scalable and sustainable solutions.
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="">
+              <div class="">
+                <i class=""></i>
+              </div>
+              <h3>Farmer registration</h3>
+              <p>Farmer Registration and Profile Management:
+
+                Farmers can create profiles to showcase their farm produce, including details about quantity, quality, and availability.</p>
+              <a href="" class="">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="">
+              <div class="">
+                <i class=""></i>
+              </div>
+              <h3>Supply Queue system</h3>
+              <p>Supply Queue System:
+
+                Farmers can queue their harvests for supply to local food outlets based on demand and quality standards.</p>
+              <a href="" class="">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="">
+              <div class="">
+                <i class=""></i>
+              </div>
+              <h3>Demand insights</h3>
+              <p>Demand Insights:
+
+                Real-time updates on foods running low at different locations, helping farmers plan and prioritize their supply.
+                </p>
+              <a href="" class="">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="">
+              <div class="">
+                <i class=""></i>
+              </div>
+              <h3>Quality and Quantity checks</h3>
+              <p>Quality and Quantity Checks:
+
+                Tools to verify the quality and quantity of produce to meet outlet requirements.</p>
+              <a href="" class="">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="">
+              <div class="">
+                <i class=""></i>
+              </div>
+              <h3>Location based matching</h3>
+              <p>Location-Based Matching:
+
+                Connects farmers with nearby food outlets, reducing transportation costs and ensuring fresh delivery.</p>
+              <a href="" class="">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="">
+              <div class="">
+                <i class=""></i>
+              </div>
+              <h3>Accessible interface</h3>
+              <p>Accessible Interface:
+
+                A simple and intuitive platform designed for ease of use by farmers with minimal tech skills.</p>
+              <a href="" class="">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>This platform has transformed how I sell my produce. 
+          I now know which foods are in high demand and can easily connect with outlets nearby. It’s simple to use and has reduced waste on my farm significantly. Ningependa kuwahimiza sote tujijenge</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets\img\testimonials\Bonface Muthama.jpg' %}" class="testimonial-img" alt="">
+                <h3>Bonface Muthama</h3>
+                <h4>Farmer &amp; Inua jamii member</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Thanks to this website, I’ve been able to stock fresh produce consistently. It’s amazing how I can match my supply needs with local farmers while ensuring the quality is top-notch.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets\img\testimonials\Caroline Wangare.jpg' %}" class="testimonial-img" alt="">
+                <h3>Caroline Wangare</h3>
+                <h4>Community Organizer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>This platform is a game-changer for promoting sustainability in food production. By reducing waste and fostering local partnerships, it supports both farmers and the environment.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets\img\testimonials\Maina Wambua.jpg' %}" class="testimonial-img" alt="">
+                <h3>Maina Wambua</h3>
+                <h4>Vegetable farmer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Nimejifunza mengi kupitia tovuti hii, sio tu kuhusu kuuza mazao yangu, bali pia jinsi ya kuboresha ubora na usimamizi wa mazao. 
+                    .</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets\img\testimonials\Sharon.jpg' %}" class="testimonial-img" alt="">
+                <h3>Sharon Mwikali</h3>
+                <h4>Mkulima wa vijana</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Nilikua na wasiwasi kuhusu kutumia teknolojia, lakini tovuti hii ni rahisi sana kutumia. Sasa naweza kuuza mazao yangu kwa urahisi na kupata maoni kuhusu mahitaji ya soko 
+                    .</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets\img\testimonials\Ochieng.jpg' %}" class="testimonial-img" alt="">
+                <h3>Ochieng, </h3>
+                <h4>Dairy farmer and entrepreneur</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>I now understand what outlets need and can adjust my farming accordingly. It’s easy to use and very helpful for small farmers like me who also aspire to be entrepreneurs 
+                    .</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+  
+
+{% endblock %}
+ 

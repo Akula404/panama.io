@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}  Show harvests {% endblock %}
+
+{% block content %}
+
+<table class="table table-light table-responsive">
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Produce_name</th>
+    <th>Quantity</th>
+    <th>Location</th>
+</tr>
+</thead>
+
+<tbody>
+    {% for harvests_list in harvests_list %}
+    <tr>
+        <td>{{ harvests_list.name}}</td>
+        <td>{{harvests_list.produce_name}}</td>
+        <td>{{harvests_list.quantity}}</td>
+        <td>{{harvests_list.location}}</td>
+        <td>
+         <a href="{%url 'accounts_app:update_harvests_list' harvests_list.id %}" class="btn btn-primary">Edit</a>
+         <a href="{%url 'accounts_app:delete_harvests_list' harvests_list.id %}" class="btn btn-danger" >Delete</a>
+        
+
+      
+       </td>
+    </tr>
+    {% endfor %}
+</tbody>
+
+</table>
+<script>
+    /**
+     * Display a confirmation dialog before deleting.
+     * @param {Event} e - The click event.
+     * @param {String} name - The name of the contact being deleted.
+     * @returns {Boolean} - Returns false if the user cancels the deletion.
+     */
+    function confirmDelete(e, name) {
+        const userConfirmed = confirm(`You are about to delete the harvests_list: ${name}?`);
+        if (!userConfirmed) {
+            e.preventDefault(); // Prevent navigation if the user cancels.
+            return false;
+        }
+        
+    }
+  </script>
+{% endblock %}

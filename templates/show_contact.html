@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Show Contacts {% endblock %}
+
+{% block content %}
+<table class="table table-light table-responsive">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Quantity</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.subject }}</td>
+            <td>{{ contact.quantity }}</td>
+            <td>{{ contact.location }}</td>
+            <td>
+                <a href="{% url 'eagle_app:update_contact' contact.id %}" class="btn btn-primary">Edit</a>
+                {% if user.is_superuser %}
+                <form action="{% url 'eagle_app:delete_contact' contact.id %}" method="post" onsubmit="return confirmDelete()">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+                {% else %}
+                <form action="{% url 'eagle_app:delete_contact' contact.id %}" method="post" onsubmit="return confirmDelete()">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+                <a href="{% url 'eagle_app:update_contact' contact.id %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'eagle_app:pay' %}" class="btn btn-success">Pay</a>            
+                {% endif %}
+                
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    function confirmDelete(e, name) {
+        const userConfirmed = confirm(`You are about to delete the contact: ${name}?`);
+        if (!userConfirmed) {
+            e.preventDefault(); // Prevent navigation if the user cancels.
+            return false;
+        }
+    }
+</script>
+{% endblock %}
+
+
+
+

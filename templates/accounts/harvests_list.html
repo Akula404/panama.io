@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Harvests{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center; margin-bottom: 20px;">Submit a Harvest</h1>
+
+<form action="" method="post" style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    {% csrf_token %}
+    <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="Your Name" name="name" style="border: 1px solid #ccc; border-radius: 4px;">
+    <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="Produce Name" name="produce_name" style="border: 1px solid #ccc; border-radius: 4px;">
+    <input type="email" class="w-100 form-control border-0 py-3 mb-4" placeholder="Enter Your Email" name="quantity" style="border: 1px solid #ccc; border-radius: 4px;">
+    <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" placeholder="Your Message" name="location" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px;"></textarea>
+    <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary" type="submit" style="border: 1px solid #007bff; border-radius: 4px; background-color: #007bff; color: white;">Submit Harvest</button>
+</form>
+
+<br><br>
+<div style="text-align: center;">
+    <a href="{% url 'upload_app:upload_app' %}" style="color: #007bff; text-decoration: none;"><i>Upload Produce</i></a>
+</div>
+
+<br><br>
+<h2 style="text-align: center; margin-top: 20px;"></h2>
+<ul style="max-width: 600px; margin: 0 auto; padding: 0; list-style-type: none;">
+    {% for harvest in harvests %}
+    <li style="margin-bottom: 10px; padding: 10px; background-color: #f1f1f1; border-radius: 4px;">
+        <strong>{{ harvest.produce_name }}</strong> - {{ harvest.quantity }} kgs from {{ harvest.location }}
+        <br>
+        <a href="{% url 'harvest_update' harvest.pk %}" style="color: green; text-decoration: none;">Edit</a> | 
+        <a href="{% url 'harvest_delete' harvest.pk %}" style="color: red; text-decoration: none;">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% if not harvests %}
+<p style="text-align: center; color: gray;"></p>
+{% endif %}
+{% endblock %}

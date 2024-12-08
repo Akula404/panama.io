@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+ {% block title %} Contact {% endblock %}
+
+ {% block content %}
+
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <h1>Contact</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'eagle_app:home' %}">Home</a></li>
+            <li class="current">Contact</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>Kiambu town, Thika road, Central</p>
+              </div>
+            </div><!-- End Info Item -->
+            
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call</h3>
+                <p>+254-755-855-488 </p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email<br></h3>
+                <p>info@retailharvests.com</p>
+                
+              <br><br>
+                <div style="width: 450px; height: 300px; overflow: hidden; border: 1px solid #ccc; margin: auto;" class="info-item d-flex"> 
+                  <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.989113945755!2d36.82287107411836!3d-1.16815349882067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3d4a2d4426b7%3A0x3faaa5bd3ced86e8!2sKiambu%20Town%20Main%20Stage!5e0!3m2!1sen!2ske!4v1733345596593!5m2!1sen!2ske" 
+                      width="100%" 
+                      height="100%" 
+                      style="border:0;" 
+                      allowfullscreen="" 
+                      loading="lazy" 
+                      referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+              </div>
+              
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+          <div class="col-lg-7">
+            <form action="" method="post" class="" data-aos="fade-up" data-aos-delay="500" style="padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+              {% csrf_token %}
+              <div class="row gy-4">
+                
+                <div class="col-md-6">
+                  <label for="name" class="form-label" style="font-weight: bold; color: #333;">Name</label>
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px;">
+                </div>
+          
+                <div class="col-md-6">
+                  <label for="email" class="form-label" style="font-weight: bold; color: #333;">Email</label>
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px;">
+                </div>
+          
+                <div class="col-md-12">
+                  <label for="subject" class="form-label" style="font-weight: bold; color: #333;">Subject</label>
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px;">
+                </div>
+          
+                <div class="col-md-12">
+                  <label for="quantity" class="form-label" style="font-weight: bold; color: #333;">Quantity</label>
+                  <textarea class="form-control" name="quantity" rows="6" placeholder="Quantity" required="" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px;"></textarea>
+                </div>
+          
+                <div class="col-md-12">
+                  <label for="location" class="form-label" style="font-weight: bold; color: #333;">Location</label>
+                  <textarea class="form-control" name="location" rows="6" placeholder="Location" required="" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px;"></textarea>
+                </div>
+          
+                <div class="col-md-12 text-center">
+                  <div class="loading" style="color: #666; display: none;">Loading...</div>
+                  <div class="error-message" style="color: red; display: none;"></div>
+                  <div class="sent-message" style="color: green; display: none;">Your message has been sent. Thank you!</div>
+          
+                  <button type="submit" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">
+                    Place Order
+                  </button>
+                </div>
+                
+              </div>
+            </form>
+          </div>
+          
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+ {% endblock %}

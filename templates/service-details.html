@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+ {% block title %} Service-details {% endblock %}
+
+ {% block content %}
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <h1>Service Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'eagle_app:home' %}">Home</a></li>
+            <li class="current">Service Details</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="services-list">
+              <a href="#" class="active">Web Design</a>
+              <a href="#">Software Development</a>
+              <a href="#">Product Management</a>
+              <a href="#">Graphic Design</a>
+              <a href="#">Marketing</a>
+            </div>
+
+            <h4>This can surely work, see here</h4>
+            <p>Participants are tasked with developing tech-driven solutions that will help mitigate the impacts of climate change by creating early warning systems that can be adopted at the community level.
+            </p>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <img src="{% static 'assets/img/services.jpg' %}" alt="" class="img-fluid services-img">
+            <h3>Participants are tasked with developing tech-driven solutions that will help mitigate the impacts of climate change by creating early warning systems that can be adopted at the community level.
+            </h3>
+            <p>
+              Participants are tasked with developing tech-driven solutions that will help mitigate the impacts of climate change by creating early warning systems that can be adopted at the community level.
+            
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Proposals that are community-centered and offer practical, scalable and sustainable solutions.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Proposals that are community-centered and offer practical, scalable and sustainable solutions.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Proposals that are community-centered and offer practical, scalable and sustainable solutions.</span></li>
+            </ul>
+            <p>
+              Proposals that are community-centered and offer practical, scalable and sustainable solutions.
+            </p>
+            <p>
+              With the growing impact of climate change, early warning systems are crucial in reducing the vulnerability of communities to extreme weather events such as 
+              floods, droughts, and storms. However, many marginalized and rural regions still lack adequate infrastructure and technology to implement these systems effectively.
+              As we focus on SDG 13 (Climate Action), there is an urgent need to innovate and design scalable solutions that ensure every community has access to reliable early warning information, 
+              minimizing the risk of climate-related disasters. 
+
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Service Details Section -->
+
+    {% endblock %}

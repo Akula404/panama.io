@@ -1,0 +1,50 @@
+</div> <!-- form-group// -->
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+     </div>
+    <input name="email" class="form-control" placeholder="Email address" type="email">
+</div> <!-- form-group// -->
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+    </div>
+    <select class="custom-select" style="max-width: 120px;">
+        <option selected="">+971</option>
+        <option value="1">+972</option>
+        <option value="2">+198</option>
+        <option value="3">+701</option>
+    </select>
+    <input name="" class="form-control" placeholder="Phone number" type="text">
+</div> <!-- form-group// -->
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+    </div>
+    <select class="form-control">
+        <option selected=""> Select job type</option>
+        <option>Designer</option>
+        <option>Manager</option>
+        <option>Accaunting</option>
+    </select>
+</div> <!-- form-group end.// -->
+
+
+
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+{{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
+
+
+
+<div>
+    <img src="{% static 'assets\img\wfp logo.jpg' %}" class="img-fluid services-img">
+</div>

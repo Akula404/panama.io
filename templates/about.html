@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+ {% block title %} About {% endblock %}
+
+ {% block content %}
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <h1>About</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'eagle_app:home' %}">Home</a></li>
+            <li class="current">About</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="{% static 'assets\img\fresh produce.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 content">
+            <h2>Production, efficient local food supply chain &amp; Sustainablity.</h2>
+            <p class="fst-italic py-3">
+              Local food outlets often face challenges in managing a consistent and reliable supply of fresh produce. 
+              Farmers may not know where to sell their goods or what items are in demand, leading to food waste and missed opportunities. 
+              Additionally, food outlets struggle with tracking the quality and quantity of supplies needed for their customers.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+              <div class="col-lg-6">
+              </div>
+            </div>
+            <p class="py-3">
+              The website will serve as a platform where local farmers can register their details, including their harvest quantity and quality, and local food outlets can view available produce and place orders
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About us</h2>
+        <p>There is an urgent need to innovate and design scalable solutions that ensure every community has access to reliable local restaurants,
+           minimizing the risk of food waste leading to pollution.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
+
+            <div class="resume-item pb-0">
+              <h4>Retail Harvest Link</h4>
+              <p><em>Fundamentally it is about consuming what we are already growing. In Kenya we are experiencing failed rains and extereme heat.</em></p>
+              <ul>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <h3 class="resume-title">Production</h3>
+            <div class="resume-item">
+              <p>
+                Working with over 200 farmers in my area we are grateful that we can supply and take our harvest to local food outlets and we are all succeeding together.
+              </p>
+
+              <em>On top of that, most farmers rely on rain-fed agriculture. For us not to take advantage of everything that has already been produced is a bit criminal. On the flipside you have huge levels of food insecurity
+              and stunting in children. It feels like a silly problem.</em>
+              
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Power of patnerships</h3>
+            <div class="resume-item">
+              <h4>Local food producers</h4>
+         
+              <ul>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <ul>
+                <li>Waste Reduction Tips: Guidelines on proper storage, rotation of stock, and strategies for reducing unsold goods.</li>
+                <li>Promotion of Eco-friendly Products: Highlighting products that are environmentally sustainable to appeal to eco-conscious consumers.</li>
+                <li>Sustainable Sourcing: A feature that connects retailers with local, sustainable food producers to ensure eco-friendly sourcing</li>
+                <li>Inventory Management Tools: Real-time tracking of stock levels, expiration dates, and demand forecasts to minimize food waste.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+    {% endblock %}
+ 

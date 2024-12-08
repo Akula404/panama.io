@@ -1,0 +1,31 @@
+{% load static %}
+<header id="header" class="header d-flex align-items-center sticky-top">
+  <div class="container-fluid  position-relative d-flex align-items-center justify-content-between">
+    
+    <a href="{% url 'eagle_app:home' %}" class="logo d-flex align-items-center">
+      <!-- Use an image logo instead of a heading -->
+      <img src="{% static 'assets/img/wfp logo.jpg' %}" alt="Sustainable Food Production Logo" class="sitename-logo">
+    </a>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="{% url 'eagle_app:home' %}" class="active">Home</a></li>
+        <li><a href="{% url 'eagle_app:about' %}">About</a></li>
+        <li><a href="{% url 'eagle_app:services' %}">Services</a></li>
+        <li><a href="{% url 'eagle_app:contact' %}">Contact</a></li>
+        
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'eagle_app:show_contact' %}">Show Contact</a></li>
+          <li><a href="{% url 'accounts_app:harvests_list' %}" style="color: #007bff; font-weight: bold; text-decoration: none;">Harvest List</a></li>
+          <li><a href="{% url 'accounts_app:show_harvests_list' %}">Show Harvests List</a></li>
+          <li><a href="{% url 'accounts_app:logout' %}">Log out</a></li>
+        {% else %}
+          <li><a href="{% url 'accounts_app:register_farmer' %}" style="color: #007bff; font-weight: bold; text-decoration: none;">Register</a></li>
+          <li><a href="{% url 'accounts_app:login_page' %}" style="color: #007bff; font-weight: bold; text-decoration: none;">Login</a></li>
+        {% endif %}
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+
+  </div>
+</header>
