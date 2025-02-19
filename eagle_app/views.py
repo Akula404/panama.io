@@ -79,12 +79,8 @@ def update_contact(request, contact_id):
         return redirect('show_contact')
     return render(request, 'update_contact.html', {'contact': contact})  # Corrected this line
 
-    
 
 
-
-
- 
 
 # Adding the mpesa functions
 
